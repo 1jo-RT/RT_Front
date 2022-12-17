@@ -33,13 +33,18 @@ export default function Login() {
             <StLine>
               <span className="line_or">또는</span>
             </StLine>
-            <div>
-              <div>
-                <span>카카오톡</span>
-              </div>
-              <div className="signup_btn_container">
-                아직 계정이 없으시다면? <StLink to="/signup">회원가입</StLink>
-              </div>
+
+            <StKakaoBtn>
+              <img
+                className="kakao_logo"
+                src="../../assets/img/kakao_logo.png"
+                alt=""
+              />
+              카카오톡
+            </StKakaoBtn>
+
+            <div className="signup_btn_container">
+              아직 계정이 없으시다면? <StLink to="/signup">회원가입</StLink>
             </div>
           </div>
         </div>
@@ -78,7 +83,7 @@ const StWrapper = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 50px 0;
+    gap: 45px 0;
   }
   .img_container {
     width: 50%;
@@ -149,6 +154,7 @@ const StLine = styled.div`
     margin: 0 auto;
     position: relative;
     color: #dddcdc;
+    font-size: 13px;
   }
   .line_or::before {
     position: absolute;
@@ -180,5 +186,20 @@ const StLink = styled(Link)`
   text-decoration: none;
   &:hover {
     text-decoration: underline;
+  }
+`;
+
+const StKakaoBtn = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  background: rgb(240 223 69);
+  border-radius: 6px;
+  align-items: center;
+  cursor: pointer;
+  .kakao_logo {
+    width: 20px;
+    height: 20px;
   }
 `;
