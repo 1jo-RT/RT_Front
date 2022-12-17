@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import { FaComment } from "react-icons/fa";
 export default function Login() {
   return (
     <StWrapper>
-      <div className="signup_inner">
+      <div className="login_inner">
         <div className="img_container">
           <img
             className="view_img"
@@ -35,16 +35,12 @@ export default function Login() {
             </StLine>
 
             <StKakaoBtn>
-              <img
-                className="kakao_logo"
-                src="../../assets/img/kakao_logo.png"
-                alt=""
-              />
-              카카오톡
+              <StKaKaoLogo className="kakao_logo" />
+              카카오톡 로그인
             </StKakaoBtn>
 
-            <div className="signup_btn_container">
-              아직 계정이 없으시다면? <StLink to="/signup">회원가입</StLink>
+            <div className="login_btn_container">
+              아직 계정이 없으시다면? <StLink to="/login">회원가입</StLink>
             </div>
           </div>
         </div>
@@ -54,13 +50,13 @@ export default function Login() {
 }
 
 const StWrapper = styled.div`
-  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   background: rgba(237, 237, 237);
   position: relative;
   height: 100vh;
-  .signup_inner {
+  .login_inner {
+    max-width: 1200px;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -109,11 +105,10 @@ const StWrapper = styled.div`
     justify-content: center;
     margin-top: 20px;
   }
-  .signup_btn_container {
+  .login_btn_container {
     font-size: 0.8rem;
-    position: absolute;
-    bottom: 5vw;
-    right: 5vw;
+    display: flex;
+    justify-content: flex-end;
   }
 `;
 const StLoginBtn = styled.button`
@@ -121,6 +116,7 @@ const StLoginBtn = styled.button`
   width: 130px;
   background: #ffc7c7;
   font-weight: 600;
+  font-size: 0.9rem;
   border: none;
   border-radius: 3px;
   box-shadow: 2px 2px 6px 0px rgb(0 0 0 / 20%);
@@ -177,7 +173,7 @@ const StLine = styled.div`
     background: #dddcdc;
     width: 100vw;
   }
-  .signup_btn {
+  .login_btn {
     color: #b7b7b7;
   }
 `;
@@ -194,12 +190,14 @@ const StKakaoBtn = styled.div`
   justify-content: center;
   width: 100%;
   height: 45px;
-  background: rgb(240 223 69);
+  background: #f7e600;
   border-radius: 6px;
   align-items: center;
+  color: #3a1d1d;
   cursor: pointer;
-  .kakao_logo {
-    width: 20px;
-    height: 20px;
-  }
+  gap: 0 10px;
+`;
+const StKaKaoLogo = styled(FaComment)`
+  width: 20px;
+  height: 20px;
 `;
