@@ -52,6 +52,7 @@ const ImageContainer = styled.div`
 `;
 const InputContainer = styled.div`
   width: 50%;
+  // height: 100%;
   border: 3px solid green;
   display: flex;
   flex-direction: column;
