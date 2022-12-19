@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaComment } from "react-icons/fa";
+import { KAKAO_AUTH_URL } from "../../shared/OAuth";
+import { getLoginInfo } from "../../redux/modules/userSlice";
+
 export default function Login() {
+  const getId = useRef();
+  const getPw = useRef();
+  const dispatch = useDispatch();
+  const onSubmitHandler = () => {
+    dispatch(
+      getLoginInfo({ id: getId.current.value, password: getPw.current.value })
+    );
+  };
   return (
     <StWrapper>
-      <div className="login_inner">
+      <div className="signup_inner">
         <div className="img_container">
           <img
             className="view_img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-DjVorpuoI7M1XaAM-Lb9knlJvipkAuKbw&usqp=CAU"
+            src="https://blog.kakaocdn.net/dn/dkoo6T/btrJfqhC9ZR/dTKjPEo4wo5s8kmJAxIht0/img.jpg"
             alt=""
           />
         </div>
@@ -19,28 +31,32 @@ export default function Login() {
             <StForm action="">
               <div className="input_field_container">
                 <span className="input_field_tit">아이디</span>
-                <StInputField type="text" />
+                <StInputField type="text" ref={getId} />
               </div>
               <div className="input_field_container">
                 <span className="input_field_tit">비밀번호</span>
-                <StInputField type="text" />
+                <StInputField type="text" ref={getPw} />
               </div>
               <div></div>
               <div className="button_box">
-                <StLoginBtn type="button">로그인</StLoginBtn>
+                <StLoginBtn type="button" onClick={onSubmitHandler}>
+                  로그인
+                </StLoginBtn>
               </div>
             </StForm>
-            <StLine>
-              <span className="line_or">또는</span>
-            </StLine>
+            <div className="util_container">
+              <StLine>
+                <span className="line_or">또는</span>
+              </StLine>
 
-            <StKakaoBtn>
-              <StKaKaoLogo className="kakao_logo" />
-              카카오톡 로그인
-            </StKakaoBtn>
+              <StKakaoBtn href={KAKAO_AUTH_URL}>
+                <StKaKaoLogo className="kakao_logo" />
+                카카오톡 로그인
+              </StKakaoBtn>
 
-            <div className="login_btn_container">
-              아직 계정이 없으시다면? <StLink to="/login">회원가입</StLink>
+              <div className="signup_btn_container">
+                아직 계정이 없으시다면? <StLink to="/signup">회원가입</StLink>
+              </div>
             </div>
           </div>
         </div>
@@ -55,14 +71,14 @@ const StWrapper = styled.div`
   background: rgba(237, 237, 237);
   position: relative;
   height: 100vh;
-  .login_inner {
+  .signup_inner {
     max-width: 1200px;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -40%);
     display: flex;
-    max-height: 70vh;
+
     width: 90%;
     border-radius: 6px;
     overflow: hidden;
@@ -98,6 +114,7 @@ const StWrapper = styled.div`
   }
   .input_field_tit {
     min-width: 80px;
+    font-size: 0.9rem;
   }
   .button_box {
     display: flex;
@@ -105,40 +122,52 @@ const StWrapper = styled.div`
     justify-content: center;
     margin-top: 20px;
   }
-  .login_btn_container {
-    font-size: 0.8rem;
+  .signup_btn_container {
     display: flex;
     justify-content: flex-end;
+    font-size: 0.8rem;
+    gap: 0 5px;
+  }
+  .util_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px 0;
   }
 `;
 const StLoginBtn = styled.button`
   height: 40px;
-  width: 130px;
+  width: 100%;
+  max-width: 150px;
   background: #ffc7c7;
   font-weight: 600;
   font-size: 0.9rem;
   border: none;
   border-radius: 3px;
-  box-shadow: 2px 2px 6px 0px rgb(0 0 0 / 20%);
   cursor: pointer;
   &:active {
-    box-shadow: none;
+    background: #ecb6b6;
   }
 `;
 const StLoginTitle = styled.h3`
   font-size: 2.3rem;
   font-weight: 600;
   text-align: center;
+  font-family: "IBM Plex Serif", serif;
 `;
 const StInputField = styled.input`
   width: 100%;
-  height: 30px;
+  height: 35px;
   border: 1px solid #dddcdc;
+  text-indent: 10px;
+  outline: none;
+  border-radius: 3px;
 `;
 const StForm = styled.div`
   display: flex;
   flex-direction: column;
   gap: 14px 0;
+  margin-top: 20px;
+  padding: 0 20px;
 `;
 
 const StLine = styled.div`
@@ -173,7 +202,7 @@ const StLine = styled.div`
     background: #dddcdc;
     width: 100vw;
   }
-  .login_btn {
+  .signup_btn {
     color: #b7b7b7;
   }
 `;
@@ -185,17 +214,24 @@ const StLink = styled(Link)`
   }
 `;
 
-const StKakaoBtn = styled.div`
+const StKakaoBtn = styled.a`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 45px;
-  background: #f7e600;
+  min-height: 45px;
+  background: #fee500;
   border-radius: 6px;
+  gap: 0 10px;
   align-items: center;
   color: #3a1d1d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
   cursor: pointer;
-  gap: 0 10px;
+  &:active {
+    background: #dbcc05;
+  }
 `;
 const StKaKaoLogo = styled(FaComment)`
   width: 20px;
