@@ -42,17 +42,20 @@ const StUserContent = styled.div`
   gap: 8px 0;
   margin-top: 5px;
   font-size: 0.9rem;
+
   .user_title {
     font-weight: 700;
     width: 14vw;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    list-style: none;
   }
   .user_content {
     width: 14vw;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-decoration: none;
   }
 `;
