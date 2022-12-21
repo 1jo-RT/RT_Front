@@ -1,11 +1,12 @@
-import React from "react";
-import Post from "./components/pages/Post";
+import Router from './shared/Router';
+import { Reset } from "styled-reset";
 
 function App() {
   return (
-    <div>
-      <Post />
-    </div>
+    <>
+      <Reset/>
+      <Router/>
+    </>
   );
 }
 
