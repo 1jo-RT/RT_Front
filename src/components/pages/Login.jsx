@@ -4,15 +4,19 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaComment } from "react-icons/fa";
 import { KAKAO_AUTH_URL } from "../../shared/OAuth";
-import { getLoginInfo } from "../../redux/modules/userSlice";
+import { postLoginInfo } from "../../redux/modules/userSlice";
 
 export default function Login() {
   const getId = useRef();
   const getPw = useRef();
   const dispatch = useDispatch();
+
   const onSubmitHandler = () => {
     dispatch(
-      getLoginInfo({ id: getId.current.value, password: getPw.current.value })
+      postLoginInfo({
+        userId: getId.current.value,
+        password: getPw.current.value,
+      })
     );
   };
   return (
