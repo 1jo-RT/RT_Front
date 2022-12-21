@@ -8,6 +8,11 @@ function App() {
       <Reset/>
       <Router/>
     </>
+function App() {
+  return (
+    <div>
+      <Post />
+    </div>
   );
 }
 
