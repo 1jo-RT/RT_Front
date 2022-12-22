@@ -3,6 +3,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { authInstance } from "../../api/axios";
 
 const initialState = {
   user: [
@@ -21,7 +22,7 @@ export const __addUser = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       console.log(payload);
-      const data = await axios.post(
+      const data = await authInstance.post(
         "http://13.209.84.31:8080/api/user",
         payload
       ); //data는 프로미스를 반환

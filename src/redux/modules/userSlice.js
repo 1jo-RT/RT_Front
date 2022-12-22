@@ -1,28 +1,49 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "axios"
+import { Cookies } from 'react-cookie';
+import jwtDecode from "jwt-decode";
+import { authInstance } from "../../api/axios";
 
-/*  */
+const cookies = new Cookies();
+
+export const setCookie = (name, value, option) => {
+  return cookies.set(name, value, { path: '/' });
+};
+
+export const getCookie = (name) => {
+  return cookies.get(name);
+};
+
+export const removeCookie = (name) => {
+  return cookies.remove(name);
+};
+
 export const kakaoLogin = (code) => {
+ 
   return async function (dispatch, getState, history) {
     console.log(code)
-    await axios({
-      method: "GET",
-      url: `http://13.209.84.31:8080/api/user/kakao/callback?code=${code}`
-    })
-      .then((res) => {
-        console.log(res); // 토큰이 넘어올 것임
+    authInstance.get(
+      `http://13.209.84.31:8080/api/user/kakao/callback?code=${code}`)
+     
 
-        const ACCESS_TOKEN = res.data.accessToken;
+      .then((response) => {
+     
+      
+      
+        let jwtToken = response.headers.authorization
+        setCookie('accessJwtToken',jwtToken);
+        
+        const decoded = jwtDecode(jwtToken);
+        localStorage.setItem("Token", JSON.stringify(decoded));
+        localStorage.setItem("Authorization", JSON.stringify(jwtToken));
 
-        localStorage.setItem("token", ACCESS_TOKEN); //예시로 로컬에 저장함
-
-        history.replace("/"); // 토큰 받았았고 로그인됐으니 화면 전환시켜줌(메인으로)
-
+  
+        window.location.href= "/"
       })
       .catch((err) => {
         console.log("소셜로그인 에러", err);
         window.alert("로그인에 실패하였습니다.");
-        /* history.replace("/login"); */ // 로그인 실패하면 로그인화면으로 돌려보냄
+   
       });
   };
 };
@@ -30,26 +51,40 @@ export const postLoginInfo = createAsyncThunk(
   "/user/login",
   async (payload, ThunkAPI) => {
     try {
+      
       console.log(payload);
-      const data = await axios.post(
-        "http://13.209.84.31:8080/api/user/login",payload
-      );
-      console.log(payload);
-      return ThunkAPI.fulfillWithValue(data.data);
-      // Promise가 resolve 됬을 경우
+      authInstance.post(
+        'http://13.209.84.31:8080/api/user/login', 
+        { userId: payload.userId, password: payload.password }, 
+        { withCredentials: true }
+      ).then(response => { 
+        
+        let jwtToken = response.headers.authorization
+        setCookie('accessJwtToken',jwtToken);
+        
+        const decoded = jwtDecode(jwtToken);
+        localStorage.setItem("Token", JSON.stringify(decoded));
+        localStorage.setItem("Authorization", JSON.stringify(jwtToken));
+
+        alert('로그인이 완료 되었습니다.');
+
+        window.location.href= "/"
+    })
+    
     } catch (error) {
       console.log(error);
       return ThunkAPI.rejectWithValue(error);
     }
   }
 );
+
 export const postUserInfo = createAsyncThunk(
   "/user",
   async (payload, ThunkAPI) => {
     try {
-      /* console.log(payload) */
-      const data = await axios.post("http://13.209.84.31:8080/user", payload);
-      console.log(data);
+    
+      const data = await authInstance.post("http://13.209.84.31:8080/api/user", payload);
+      
       return ThunkAPI.fulfillWithValue(data.data);
       // Promise가 resolve 됬을 경우
     } catch (error) {
@@ -64,7 +99,7 @@ export const getUserInfo = createAsyncThunk(
   async (payload, ThunkAPI) => {
    
     try {
-      const data = await axios.get("http://localhost:3001/user");
+      const data = await authInstance.get("http://13.209.84.31:8080/api/user/thumb");
       return ThunkAPI.fulfillWithValue(data.data);
       // Promise가 resolve 됬을 경우
     } catch (error) {

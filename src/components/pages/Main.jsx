@@ -7,15 +7,27 @@ import Card from "./Card";
 import axios from "axios";
 import { format, formatDistanceToNow } from "date-fns";
 import { ko } from "date-fns/locale";
+import { useNavigate } from "react-router-dom/dist";
 
 export default function Main() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const boards = useSelector((state) => state.board.boards);
   console.log(boards);
+  const loginUser = JSON.parse(window.localStorage.getItem("Token"));
+
+  // 여기서 key는 userId,username객체 내부의 key data가 아닌 localstorage의 key를 말하는 것
+
   useEffect(() => {
     dispatch(getBoardInfo());
   }, [dispatch]);
-
+  const handleClickLog = (user) => {
+    if (!user) {
+      console.log("false");
+      return navigate("/api/user/login");
+    }
+    console.log("true");
+  };
   return (
     <StMain>
       <main className="main_container">
@@ -23,20 +35,35 @@ export default function Main() {
           <h2 className="header_title">자유게시판</h2>
           <div className="log_btn_container">
             <div className="welcome_user">
-              <StUserName className="user_name">littlezero48</StUserName>
+              <StUserName className="user_name">
+                {loginUser ? loginUser.userId : "게스트"}
+              </StUserName>
               님, 반갑습니다.
             </div>
-            <StLogButton type="button">로그아웃</StLogButton>
+            {loginUser ? (
+              <StLogButton
+                type="button"
+                onClick={() => handleClickLog(loginUser)}
+              >
+                로그아웃
+              </StLogButton>
+            ) : (
+              <StLogButton
+                type="button"
+                onClick={() => handleClickLog(loginUser)}
+              >
+                로그인
+              </StLogButton>
+            )}
           </div>
         </StHeader>
         <div className="contents_container">
           <StContent className="contents_inner">
             {boards &&
               boards.map((data) => {
-                console.log("id", data.id);
                 return (
                   <StLink to={`/boards/${data.id}`} key={data.id}>
-                    <Card data={data} key={data.id} />;
+                    <Card data={data} key={data.id} />
                   </StLink>
                 );
               })}

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
+import { authInstance } from "../../api/axios";
 
 
 
@@ -10,7 +10,7 @@ export const getBoardInfo = createAsyncThunk(
   "/boards",
   async (payload,ThunkAPI) =>{
     try{
-      const data = await axios.get("http://13.209.84.31:8080/api/boards");
+      const data = await authInstance.get("http://13.209.84.31:8080/api/boards");
       return ThunkAPI.fulfillWithValue(data.data);
     }catch(error){
       console.log(error);
@@ -23,8 +23,30 @@ export const getDetailBoardInfo = createAsyncThunk(
   "/boards/{boardId}",
   async (payload,ThunkAPI) =>{
     try{
-      const data = await axios.get(`http://13.209.84.31:8080/boards/`);
+      const data = await authInstance.get(`http://13.209.84.31:8080/api/boards`);
       return ThunkAPI.fulfillWithValue(data.data);
+    }catch(error){
+      console.log(error);
+      return ThunkAPI.rejectWithValue(error);
+    }
+  }
+)
+
+
+export const PostDetailBoardInfo = createAsyncThunk(
+  "/boards/{boardId}",
+  async (payload,ThunkAPI) =>{
+    try{
+      console.log('pay',payload);
+      authInstance.post(
+        `http://13.209.84.31:8080/api/boards/${payload.pageId}/newcomment`, 
+        { comment: payload.comment }, 
+        { withCredentials: true }
+      ).then(response => { 
+        
+        console.log(response)}); 
+
+     
     }catch(error){
       console.log(error);
       return ThunkAPI.rejectWithValue(error);

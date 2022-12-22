@@ -10,27 +10,16 @@
       "id": 1,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 1,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
           "modifiedAt": "2022-12-15T18:05:34.875629",
           "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
         }
@@ -40,27 +29,16 @@
       "id": 2,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 2,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
           "modifiedAt": "2022-12-15T18:05:34.875629",
           "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
         }
@@ -70,27 +48,16 @@
       "id": 3,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 3,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
           "modifiedAt": "2022-12-15T18:05:34.875629",
           "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
         }
@@ -100,27 +67,16 @@
       "id": 4,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 4,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
           "modifiedAt": "2022-12-15T18:05:34.875629",
           "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
         }
@@ -130,27 +86,16 @@
       "id": 5,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 5,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
           "modifiedAt": "2022-12-15T18:05:34.875629",
           "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
         }
@@ -160,27 +105,16 @@
       "id": 6,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 66,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
           "modifiedAt": "2022-12-15T18:05:34.875629",
           "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
         }
@@ -190,27 +124,16 @@
       "id": 7,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 7,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
           "modifiedAt": "2022-12-15T18:05:34.875629",
           "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
         }
@@ -220,8 +143,11 @@
       "id": 8,
       "title": "4번째 글",
       "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
+      "userId": 8,
+      "username": "유저 닉네임",
+      "like": 0,
+      "createdAt": "2022-12-15T18:05:34.875629",
+      "modifiedAt": "2022-12-15T18:05:34.875629",
       "commentList": [
         {
           "createdAt": "2022-12-15T18:05:34.875629",
@@ -229,262 +155,35 @@
           "id": 3,
           "comment": "제발 댓글 잘 작성 되라",
           "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
         }
       ]
+    }
+  ],
+  "comment": [
+    {
+      "boardId": "5",
+      "comment": "dasdas",
+      "id": 1
     },
     {
-      "id": 9,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
+      "comment": "sdadsdad",
+      "id": 2
     },
     {
-      "id": 10,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
+      "comment": "sdadsdad",
+      "id": 3
     },
     {
-      "id": 11,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
+      "comment": "dasdasdasd",
+      "id": 4
     },
     {
-      "id": 12,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
+      "comment": "dasdasdasd",
+      "id": 5
     },
     {
-      "id": 13,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "title": "4번째 글",
-      "content": "작성 완료",
-      "userId": "littlezero48",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nqFghf-kdD4kRRnwsONu79H41UDZEX4Y0w&usqp=CAU",
-      "commentList": [
-        {
-          "createdAt": "2022-12-15T18:05:34.875629",
-          "modifiedAt": "2022-12-15T18:05:34.875629",
-          "id": 3,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T18:05:33.177063",
-          "modifiedAt": "2022-12-15T18:05:33.177063",
-          "id": 2,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        },
-        {
-          "createdAt": "2022-12-15T17:40:33.570488",
-          "modifiedAt": "2022-12-15T17:40:33.570488",
-          "id": 1,
-          "comment": "제발 댓글 잘 작성 되라",
-          "username": "tjgurtn2"
-        }
-      ]
+      "comment": "asdasdasdasdasfasasdasdasds",
+      "id": 6
     }
   ]
 }

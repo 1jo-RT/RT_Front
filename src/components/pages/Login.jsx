@@ -12,6 +12,8 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const onSubmitHandler = () => {
+    if (getId.current.value == "" || getPw.current.value == "")
+      return alert("아이디나 비밀번호를 확인해주세요");
     dispatch(
       postLoginInfo({
         userId: getId.current.value,
@@ -39,7 +41,7 @@ export default function Login() {
               </div>
               <div className="input_field_container">
                 <span className="input_field_tit">비밀번호</span>
-                <StInputField type="text" ref={getPw} />
+                <StInputField type="password" ref={getPw} />
               </div>
               <div></div>
               <div className="button_box">
@@ -59,7 +61,7 @@ export default function Login() {
               </StKakaoBtn>
 
               <div className="signup_btn_container">
-                아직 계정이 없으시다면? <StLink to="/signup">회원가입</StLink>
+                아직 계정이 없으시다면? <StLink to="/api/user">회원가입</StLink>
               </div>
             </div>
           </div>

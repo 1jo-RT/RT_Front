@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { authInstance } from "../../api/axios";
 
 const initialState = {
   post: [
@@ -18,8 +19,8 @@ export const __createPost = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       console.log(payload);
-      const data = await axios.post(
-        "http://localhost:3001/api/boards/newboard",
+      const data = await authInstance.post(
+        "http://13.209.84.31:8080/api/boards/newboard",
         payload
       ); //data는 프로미스를 반환
       console.log(data);
@@ -33,7 +34,7 @@ export const __createPost = createAsyncThunk(
 
 //수정페이지 get
 
-export const __updatePost = createAsyncThunk(
+/* export const __updatePost = createAsyncThunk(
   "updatePost",
   async (payload, thunkAPI) => {
     try {
@@ -48,7 +49,7 @@ export const __updatePost = createAsyncThunk(
       return thunkAPI.rejectWithValue(error);
     }
   }
-);
+); */
 
 const postSlice = createSlice({
   name: "posts",
