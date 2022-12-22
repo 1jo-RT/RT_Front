@@ -1,25 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { getBoardInfo } from "../../redux/modules/boardSlice";
+import {
+  getBoardInfo,
+  PostDetailBoardInfo,
+} from "../../redux/modules/boardSlice";
+import axios from "axios";
+import { getCookie } from "../../redux/modules/userSlice";
+import { format, formatDistance, formatRelative, subDays } from "date-fns";
 
 export default function Detail() {
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.board.boards);
   const { id } = useParams();
-  console.log(id);
-  console.log(boards);
+  const uploadReple = useRef();
+  const loginUser = JSON.parse(window.localStorage.getItem("Token"));
+
+  let token = localStorage.getItem("Authorization").split(`\"`, -1)[1];
+  console.log(loginUser);
   let detailPage = boards.find((data) => {
+    console.log(data.username, id);
     if (data.id == id) {
       return data;
     }
   });
+
   console.log(detailPage);
   useEffect(() => {
     dispatch(getBoardInfo());
   }, [dispatch]);
 
+  const onSumbitHandler = async () => {
+    console.log(uploadReple.current.value);
+    axios
+      .post(
+        `http://13.209.84.31:8080/api/boards/${id}/newcomment`,
+        { comment: uploadReple.current.value },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      });
+
+    /* http://13.209.84.31:8080/api/boards/${id}/newcomment */
+    /* http://localhost:3000/comment */
+
+    dispatch(
+      PostDetailBoardInfo({ pageId: id, comment: uploadReple.current.value })
+    );
+  };
   return (
     <StWrapper>
       <div className="detail_inner">
@@ -30,30 +60,41 @@ export default function Detail() {
             alt=""
           />
         </div>
+
         <div className="content_container">
           <div className="content_inner">
             <StTitle>
-              <span className="detail_title">{detailPage.title}</span>
+              <span className="detail_title">
+                {detailPage && detailPage.title}
+              </span>
               <StLink to="/">뒤로</StLink>
             </StTitle>
             <StContent>
               <div className="content_header">
-                <span>작성자 :{detailPage.usename}</span>
-                <span>{detailPage.createdAt}</span>
+                <span>작성자 :{detailPage && detailPage.userId}</span>
+                <span className="post_time">
+                  {detailPage && detailPage.createdAt}
+                </span>
               </div>
-              <div className="content_main">{detailPage.content}</div>
-              <div>
-                <button className="modify_btn">수정</button>
-                <button className="delete_btn">삭제</button>
+              <div className="content_main">
+                내용 : {detailPage && detailPage.content}
               </div>
+              {loginUser.username == Detail.username ? (
+                <div className="board_reple_container">
+                  <StBoardBtn className="modify_btn">수정</StBoardBtn>
+                  <StBoardBtn className="delete_btn">삭제</StBoardBtn>
+                </div>
+              ) : (
+                ""
+              )}
             </StContent>
             <StReple>
               <div className="reple_container">
                 <span className="reple_user">닉네임</span>
                 <span className="reple_content">댓글 내용이 들어갑니다.</span>
                 <StButtonContainer>
-                  <StButton>수정</StButton>
-                  <StButton>삭제</StButton>
+                  <StRePleButton>수정</StRePleButton>
+                  <StRePleButton>삭제</StRePleButton>
                 </StButtonContainer>
               </div>
               <div>
@@ -63,10 +104,13 @@ export default function Detail() {
                     id=""
                     cols="30"
                     rows="10"
+                    ref={uploadReple}
                     className="reple_textarea"
                   ></textarea>
                   <div className="reple_submit">
-                    <button>작성</button>
+                    <button type="button" onClick={onSumbitHandler}>
+                      작성
+                    </button>
                   </div>
                 </form>
               </div>
@@ -87,6 +131,9 @@ const StWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding: 10vh 0;
+  .po-stiky {
+    position: sticky;
+  }
   .detail_inner {
     max-width: 1200px;
 
@@ -115,6 +162,7 @@ const StWrapper = styled.div`
   }
   .img_container {
     width: 50%;
+    position: relative;
   }
   .img_wrapper {
     width: 100%;
@@ -152,6 +200,24 @@ const StContent = styled.div`
     display: flex;
     justify-content: space-between;
   }
+  .board_reple_container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0 10px;
+  }
+  .post_time {
+    font-size: 0.7rem;
+    color: #727070;
+  }
+`;
+const StBoardBtn = styled.button`
+  padding: 8px 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid #dddddd;
+  &:active {
+    box-shadow: inset 0 0 3px 1px rgba(193, 193, 193, 0.3);
+  }
 `;
 const StLink = styled(Link)`
   text-decoration: none;
@@ -183,7 +249,7 @@ const StButtonContainer = styled.div`
   align-items: flex-end;
   min-width: fit-content;
 `;
-const StButton = styled.button`
+const StRePleButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
